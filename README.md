@@ -32,4 +32,4 @@ As per the Instructions for use, ensure that you backup your project prior to ma
 
 # Contribution
 
-This project was done to assist in a problem that arose for my wife during her PhD studies, I personally am not an active user of any of the Tobii projects and built this project by examaning saved projects from Tobii Studio.  If this is of use to you in any way or you make any improvements to it, then please feel free to raise a merge request.
+This project was done to assist in a problem that arose for my wife during her PhD studies, I personally am not an active user of any of the Tobii software and built this project by examining saved projects from Tobii Studio.  If this is of use to you in any way or you make any improvements to it, then please feel free to raise a merge request.

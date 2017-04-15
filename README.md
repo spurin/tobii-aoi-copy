@@ -14,7 +14,7 @@ Despite a number of users seeking similar functionality on the Tobii related for
 
 Tobii projects use SQLite databases to store project information, these are the database.db3 files in the project directory.  The script uses Python to analyze both the source and destination project.  It scans the Media table, looking for media that is common between the source and destination project, in this case the filename will be shared across both projects but each will have their own unique MediaID within the project.
 
-Upon finding a matching file, the script scans the MovingAOI table of the source project, in search of any Areas of Interest for the video in question, if there are Areas of Interest, it creates the equivalent entries in the destination database, using the correspondong MediaId of the video file for the destination project.
+Upon finding a matching file, the script scans the MovingAOI table of the source project, in search of any Areas of Interest for the video in question, if there are Areas of Interest, it creates the equivalent entries in the destination database, using the corresponding MediaId of the video file for the destination project.
 
 Then, for each matched MovingAOI entry found, it copies all of the corresponding data from the Keyframe table from the source to the destination project.
 

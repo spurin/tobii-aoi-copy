@@ -28,67 +28,87 @@ You will need to have a version of Python 3.x installed, if you are using a vers
 
 The script will copy all corresponding source video AOI's to all destination AOI's if the filename matches, therefore, depending on your use setup, the tool can be used in a variety of ways, as a copy, or a merge tool.  In the examples the character after the video name signifies the same video, i.e. Video A in both Project A and Project X are the same video -
 
-## Example 1 (One to One copy of AOI data):
+## Example 1 (One to one copy of AOI data):
 
+```
 Source: 
    Project A (Video A with AOI)
 Destination: 
    Project X (Video A without AOI)
+```
 
 ### Result:
 
+```
 Destination:
    Project X (Video A with AOI)
+```
 
 ## Example 2 (One to one copy of multiple AOI data):
 
+```
 Source: 
    Project A (Video A with AOI) (Video B with AOI) 
 Destination: 
    Project X (Video A without AOI) (Video B without AOI)
+```
 
 ### Result:
 
+```
 Destination: 
    Project X (Video A with AOI) (Video B with AOI)
+```
 
 ## Example 3 (One to one copy of AOI data where source contains multiple sets of AOI):
 
+```
 Source: 
    Project A (Video A with AOI) (Video B with AOI) (Video C with AOI)
 Destination: 
    Project X (Video B with AOI)
+```
 
 ### Result:
 
+```
 Destination: 
    Project X (Video B with AOI)
+```
 
 ## Example 4 (Merge of AOI data from multiple sources to destination without AOI):
 
+```
 Source: 
    Project A (Video A with AOI)
    Project B (Video A with AOI)
 Destination: 
    Project X (Video A without AOI)
-   
+```
+
 ### Result:
 
+```
 Destination: 
    Project X (Video A with AOI (from both Project A and Project B))
+```
 
 ## Example 5 (Merge of AOI data from multiple sources to destination with AOI)::
 
+```
 Source: 
    Project A (Video A with AOI)
    Project B (Video A with AOI)
 Destination: 
    Project X (Video A with AOI)
-   
+```
+
 ### Result:
 
+```
 Destination: 
    Project X (Video A with AOI (from Project X, Project A and Project B))
+```
 
 In most cases, example 1 is the simplest and with this in mind, it may be easier, to take a copy of a working project and to manipulate it so it acts as a clean copy source for others.  
 

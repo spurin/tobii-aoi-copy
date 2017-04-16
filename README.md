@@ -124,4 +124,4 @@ As per the Instructions for use, ensure that you backup your project prior to ma
 
 This project was done to assist in a problem that arose for my wife during her PhD studies, I personally am not an active user of any of the Tobii software and built this project by examining saved output projects from Tobii Studio.  If this is of use to you in any way or you make any improvements to it, then please feel free to raise a merge request.  If this is reviewed by a member of the Tobii Studio software team, I urge you to add this functionality to what is an excellent piece of software.
 
-Should changes be made in the future, please let me know and I will update the repository to advise users of the approprite version with said export/import functionality.
+Should changes be made in the future, please let me know and I will update the repository to advise users of the appropriate version with said export/import functionality.

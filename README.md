@@ -8,7 +8,7 @@ This is a script that can be used to copy the AOI (Areas of Interest) from one T
 
 # Why this was created
 
-Despite a number of users seeking similar functionality on the Tobii related forums, Tobii studio at present does not provide a way of exporting AOI's so that they can be used in another project.  This project addresses this issue until a more suitable workaround is provided by the Tobii Studio software.
+Despite a number of users seeking similar functionality on the Tobii related forums, Tobii studio at present provides a way of exporting AOI's, but does not provide an import facility allowing them to be used in another project.  This project addresses this issue until a more suitable workaround is provided by the Tobii Studio software.
 
 # How it works
 
@@ -18,13 +18,83 @@ Upon finding a matching file, the script scans the MovingAOI table of the source
 
 Then, for each matched MovingAOI entry found, it copies all of the corresponding data from the Keyframe table from the source to the destination project.
 
+It uses uuid.uuid1() to recreate the UUID's used as unique references for the data points
+
 # Instructions for use
 
-Firstly, create a copy of your project as a backup.
+Firstly, create a copy of your target project as a backup.
 
-You will need to have a version of Python 3.x installed, if you are using a version installed from Python.org it should already include the requirements of sqlite.  Modify the source_db and dest_db so that they correlate to the full paths of your source and destination databases, then simply run the script in Python.  Running it multiple times should have no detrimental effect and as it only places the entries if they do not exist.
+You will need to have a version of Python 3.x installed, if you are using a version installed from Python.org it should already include the requirements of sqlite and uuid.  Modify the source_db and dest_db entries at the top so that they correlate to the full paths of your source and destination tobii project databases, then simply run the script in Python.  Running it multiple times should have no detrimental effect and as it only places the entries if they do not exist.
 
-Review your project in Tobii Studio, the project should now contain the equivalent points of interest.
+The script will copy all corresponding source video AOI's to all destination AOI's if the filename matches, therefore, depending on your use setup, the tool can be used in a variety of ways, as a copy, or a merge tool.  In the examples the character after the video name signifies the same video, i.e. Video A in both Project A and Project X are the same video -
+
+## Example 1 (One to One copy of AOI data):
+
+Source: 
+   Project A (Video A with AOI)
+Destination: 
+   Project X (Video A without AOI)
+
+### Result:
+
+Destination:
+   Project X (Video A with AOI)
+
+## Example 2 (One to one copy of multiple AOI data):
+
+Source: 
+   Project A (Video A with AOI) (Video B with AOI) 
+Destination: 
+   Project X (Video A without AOI) (Video B without AOI)
+
+### Result:
+
+Destination: 
+   Project X (Video A with AOI) (Video B with AOI)
+
+## Example 3 (One to one copy of AOI data where source contains multiple sets of AOI):
+
+Source: 
+   Project A (Video A with AOI) (Video B with AOI) (Video C with AOI)
+Destination: 
+   Project X (Video B with AOI)
+
+### Result:
+
+Destination: 
+   Project X (Video B with AOI)
+
+## Example 4 (Merge of AOI data from multiple sources to destination without AOI):
+
+Source: 
+   Project A (Video A with AOI)
+   Project B (Video A with AOI)
+Destination: 
+   Project X (Video A without AOI)
+   
+### Result:
+
+Destination: 
+   Project X (Video A with AOI (from both Project A and Project B))
+
+## Example 5 (Merge of AOI data from multiple sources to destination with AOI)::
+
+Source: 
+   Project A (Video A with AOI)
+   Project B (Video A with AOI)
+Destination: 
+   Project X (Video A with AOI)
+   
+### Result:
+
+Destination: 
+   Project X (Video A with AOI (from Project X, Project A and Project B))
+
+In most cases, example 1 is the simplest and with this in mind, it may be easier, to take a copy of a working project and to manipulate it so it acts as a clean copy source for others.  
+
+With some modifications to the source code, it should also be possible to create a pipeline using the script so that you have one dedicated source, that allows you to copy from the source to all target projects.  If this is desired, I recommend implementing a SQL execute to clear the MovingAOI entries prior to insertion.
+
+After running the script, review your project in Tobii Studio, the project should now contain the equivalent points of interest.
 
 # Disclaimer
 

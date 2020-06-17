@@ -6,6 +6,11 @@ Tobii Eye Tracker Area of Interest (AOI) Copy Utility
 
 This is a script that can be used to copy the AOI (Areas of Interest) from one Tobii project to another.  It is useful if you have created Areas of Interest against a video in one project, and then need to replicate those Areas of Interest to another project, that uses exactly the same video.  This creates a pixel perfect copy of the areas of interest with exact frames.
 
+# Latest Update
+
+I was suprised to see that this utility has had some popularity in China, based on the received Stars.  I'm not too sure why but I wish you the best :)
+The most recent update also acopies the AOI grouping that exists in a project, if you do not wish to use this, see the previous commits.
+
 # Why this was created
 
 Despite a number of users seeking similar functionality on the Tobii related forums, Tobii studio at present provides a way of exporting AOI's, but does not provide an import facility allowing them to be used in another project.  This project addresses this issue until a more suitable workaround is provided by the Tobii Studio software.
@@ -22,9 +27,11 @@ It uses uuid.uuid1() to recreate the UUID's used as unique references for the da
 
 # Instructions for use
 
-Firstly, create a copy of your target project as a backup.
+Firstly, create a copy of your target project as a backup.  Although this is done automatically in the script, we are working with a best efforts approach here so I always encourage due dilligence before use.
 
 You will need to have a version of Python 3.x installed, if you are using a version installed from Python.org it should already include the requirements of sqlite and uuid.  Modify the source_db and dest_db entries at the top so that they correlate to the full paths of your source and destination tobii project databases, then simply run the script in Python.  Running it multiple times should have no detrimental effect and as it only places the entries if they do not exist.
+
+Within the script, there is an optional boolean flag that can be set called 'CLEAR_DESTINATION' that defaults to false.  As the name implies, this will remove all AOI data, from the target.
 
 The script will copy all corresponding source video AOI's to all destination AOI's if the filename matches, therefore, depending on your use setup, the tool can be used in a variety of ways, as a copy, or a merge tool.  In the examples the character after the video name signifies the same video, i.e. Video A in both Project A and Project X are the same video -
 

@@ -117,9 +117,9 @@ Destination:
    Project X (Video A with AOI (from Project X, Project A and Project B))
 ```
 
-In most cases, example 1 is the simplest and with this in mind, it may be easier, to take a copy of a working project and to manipulate it so it acts as a clean copy source for others.  
+In most cases, example 1 is the simplest and with this in mind, it may be easier, to take a copy of a working project and to manipulate it so it acts as a clean copy source for others, or, you leverage the CLEAR_DESTINATION flag and set it to True.  
 
-With some modifications to the source code, it should also be possible to create a pipeline using the script so that you have one dedicated source, that allows you to copy from the source to all target projects.  If this is desired, I recommend implementing a SQL execute to clear the MovingAOI entries prior to insertion.
+With some modifications to the source code, it should also be possible to create a pipeline using the script so that you have one dedicated source, that allows you to copy from the source to all target projects.  If this is desired, the use of CLEAR_DESTINATION might be useful.
 
 After running the script, review your project in Tobii Studio, the project should now contain the equivalent points of interest.
 

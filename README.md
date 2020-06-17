@@ -1,4 +1,4 @@
-# Tobii-aoi-copy
+# Tobii-aoi-copy 👀
 
 Tobii Eye Tracker Area of Interest (AOI) Copy Utility
 
@@ -9,7 +9,7 @@ This is a script that can be used to copy the AOI (Areas of Interest) from one T
 # Latest Update
 
 I was suprised to see that this utility has had some popularity in China, based on the received Stars.  I'm not too sure why but I wish you the best :)
-The most recent update also acopies the AOI grouping that exists in a project, if you do not wish to use this, see the previous commits.
+The most recent update also copies the AOI grouping that exists in a project, if you do not wish to use this, see the previous commits.
 
 # Why this was created
 
